@@ -73,7 +73,7 @@ const CityWeather = () => {
             <Typography variant="body1">Humidity: {weatherData.main.humidity}%</Typography>
           </CardContent>
 
-          <Button variant="outlined" sx={{ mt: 2 }} onClick={() => router.push('/')}>
+          <Button variant="outlined" sx={{ mt: 2 }} onClick={() => router.push('/weather')}>
             Back to Home
           </Button>
         </Card>

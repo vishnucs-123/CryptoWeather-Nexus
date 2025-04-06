@@ -45,91 +45,50 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Sticky Navbar with Hide on Scroll Animation */}
+      {/* Sticky Navbar with Hide on Scroll */}
       <Slide appear={false} direction="down" in={!trigger}>
-        <AppBar
-          position="sticky"
-          elevation={0}
-          sx={{
-            background: 'rgba(255, 255, 255, 0.05)',
-            backdropFilter: 'blur(12px)',
-            borderBottom: `1px solid ${theme.palette.divider}`,
-          }}
-        >
-          <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <AppBar position="sticky" color="primary" sx={{ backgroundColor: '#0f172a' }}>
+          <Toolbar>
             <Typography
-              variant="h5"
-              onClick={() => handleNavigate('/')}
-              sx={{
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                color: 'white',
-                letterSpacing: 1,
-                '&:hover': { color: '#60A5FA' },
-              }}
+              variant="h6"
+              sx={{ flexGrow: 1, cursor: 'pointer', fontWeight: 'bold' }}
+              onClick={() => handleNavigate('/dashboard')}
             >
-              CRYPTO<span style={{ color: '#60A5FA' }}>-WEATHER-</span>NEXUS
+              CryptoWeather Nexus
             </Typography>
 
-            {isMobile ? (
-              <>
-                <IconButton
-                  onClick={() => setOpen(true)}
-                  sx={{ color: 'white' }}
-                >
-                  <MenuIcon />
-                </IconButton>
-
-                {/* Animated Drawer */}
-                <Drawer
-                  anchor="right"
-                  open={open}
-                  onClose={() => setOpen(false)}
-                  transitionDuration={{ enter: 400, exit: 400 }}
-                >
-                  <Box sx={{ width: 250, p: 2 }}>
-                    <List>
-                      {menuItems.map((item, index) => (
-                        <ListItem key={index} disablePadding>
-                          <ListItemButton onClick={() => handleNavigate(item.path)}>
-                            <ListItemText primary={item.label} />
-                          </ListItemButton>
-                        </ListItem>
-                      ))}
-                    </List>
-                  </Box>
-                </Drawer>
-              </>
-            ) : (
-              <Box sx={{ display: 'flex', gap: 2 }}>
-                {menuItems.map((item, index) => (
+            {/* Desktop Menu */}
+            {!isMobile ? (
+              <Box>
+                {menuItems.map((item) => (
                   <Button
-                    key={index}
+                    key={item.path}
+                    color="inherit"
                     onClick={() => handleNavigate(item.path)}
-                    sx={{
-                      color: 'white',
-                      fontWeight: 500,
-                      position: 'relative',
-                      '&::after': {
-                        content: '""',
-                        display: 'block',
-                        width: '0%',
-                        height: '2px',
-                        background: '#60A5FA',
-                        transition: 'width 0.3s',
-                        position: 'absolute',
-                        bottom: 0,
-                        left: 0,
-                      },
-                      '&:hover::after': {
-                        width: '100%',
-                      },
-                    }}
+                    sx={{ mx: 1 }}
                   >
                     {item.label}
                   </Button>
                 ))}
               </Box>
+            ) : (
+              // Mobile Drawer Button
+              <>
+                <IconButton color="inherit" onClick={() => setOpen(true)}>
+                  <MenuIcon />
+                </IconButton>
+                <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
+                  <List sx={{ width: 200 }}>
+                    {menuItems.map((item) => (
+                      <ListItem key={item.path} disablePadding>
+                        <ListItemButton onClick={() => handleNavigate(item.path)}>
+                          <ListItemText primary={item.label} />
+                        </ListItemButton>
+                      </ListItem>
+                    ))}
+                  </List>
+                </Drawer>
+              </>
             )}
           </Toolbar>
         </AppBar>

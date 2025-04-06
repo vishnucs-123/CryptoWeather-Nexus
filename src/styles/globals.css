@@ -1,0 +1,8 @@
+
+@import "tailwindcss";
+
+body {
+  font-family: 'Inter', sans-serif; /* Make sure you have this font installed or load it */
+  background-color: #1e1e2f; /* Dark theme background for a modern feel */
+  color: white;
+}

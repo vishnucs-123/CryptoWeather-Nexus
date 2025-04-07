@@ -27,6 +27,14 @@ cd crypto-weather-nexus
  nmp install 
 
 ```
+4. **Set up environment variables**
+Create a .env.local file in the root directory with the following content:
+```bash
+NEXT_PUBLIC_OPENWEATHER_API_KEY=your_openweather_api_key
+NEXT_PUBLIC_NEWS_API_KEY=your_newsapi_key
+NEXT_PUBLIC_CRYPTO_API_URL=https://api.coingecko.com/api/v3
+
+```
 3. **Run the dev server**
 ```bash
 npm run dev

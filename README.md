@@ -38,4 +38,12 @@ NEXT_PUBLIC_CRYPTO_API_URL=https://api.coingecko.com/api/v3
 3. **Run the dev server**
 ```bash
 npm run dev
+```
+---
 
+## 📌 Features
+
+- Search for any city and get live weather info.
+- Weather data includes temperature, humidity, wind speed, etc.
+- View current prices and trends of top cryptocurrencies.
+- View current prices and trends of top cryptocurrencies.

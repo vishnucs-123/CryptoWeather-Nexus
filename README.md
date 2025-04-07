@@ -34,28 +34,25 @@ A modern, responsive Next.js application that provides:
 - 💾 LocalStorage for saving favourites
 - 🔐 Environment Variables for API keys
 
----
-
-## 📂 Folder Structure
-
-├── pages/ │ ├── index.js // Landing Page (Redirects to /dashboard) │ ├── dashboard.js // Main dashboard │ ├── weather/ // Weather functionality │ ├── crypto/ // Crypto price checker │ └── news/ // Global news section ├── components/ // Reusable components ├── public/ // Static files & screenshots └── styles/ // Tailwind + custom styles
-
 
 ---
 
-## 🔧 Setup Instructions
+## 🔧 Installation & Setup
 
-### 1. Clone the Repository
-
+1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/crypto-weather-nexus.git
+git clone https://github.com/your-username/crypto-weather-nexus.git
 cd crypto-weather-nexus
+---
+2. **Install Dependencies**
+```bash
 npm install
-# or
-yarn install
+---
+3. **Set Up Environment Variables**
+Create a .env.local file in the root directory and add the following:
 NEXT_PUBLIC_OPENWEATHER_API_KEY=your_openweather_api_key
 NEXT_PUBLIC_NEWS_API_KEY=your_newsapi_key
-NEXT_PUBLIC_CRYPTO_API=https://api.coingecko.com/api/v3
+NEXT_PUBLIC_CRYPTO_API_URL=https://api.coingecko.com/api/v3/
+---
+4. **Run Development Server
 npm run dev
-# or
-yarn dev

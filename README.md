@@ -10,7 +10,7 @@ Rensponsive Next.js application that provides:
 
 ## Live Preview 🚀
 
-[Visit the App](https://crypto-weather-nexus-taupe.vercel.app/)
+[Visit the App](https://crypto-weather-nexus-five-hazel.vercel.app/)
 
 ---
 

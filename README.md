@@ -13,11 +13,21 @@ Rensponsive Next.js application that provides:
 [Visit the App](https://crypto-weather-nexus-taupe.vercel.app/)
 
 ---
+
 ## Instalation & Setup
----
-**Clone the repository**
+
+1. **Clone the repository**
 ```bash
 git clone https://github.com/your-username/crypto-weather-nexus.git
 cd crypto-weather-nexus
----
+
+```
+2. **Install dependencies**
+ ```bash
+ nmp install 
+
+```
+3. **Run the dev server**
+```bash
+npm run dev
 
